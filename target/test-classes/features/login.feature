@@ -4,7 +4,7 @@ Feature: Login functionalities with valid credentials
 
   Background:For the scenarios in the feature file, user is expected to be on login page
     Given User is on the  login page
-  @wip
+  
 
   Scenario: Login as a driver
     When The user logs in as a driver

@@ -107,7 +107,8 @@ public class LoginStepDefinitions {
     }
 
     @Then("The driver sees their own username in the profile menu")
-    public void the_driver_sees_their_own_username_in_the_profile_menu() {
+    public void the_driver_sees_their_own_username_in_the_profile_menu() throws InterruptedException {
+        Thread.sleep(5000);
         String expectedProfileName = ConfigurationReader.getProperty("driver.username");
         String actualProfileName = homePage.userProfile.getText();
         Assert.assertEquals(expectedProfileName, actualProfileName);
@@ -116,17 +117,18 @@ public class LoginStepDefinitions {
 
 
     @Then("The sales manager sees their own username in the profile menu")
-    public void the_sales_manager_sees_their_own_username_in_the_profile_menu() {
+    public void the_sales_manager_sees_their_own_username_in_the_profile_menu() throws InterruptedException {
+        Thread.sleep(3000);
         String expectedProfileName = ConfigurationReader.getProperty("sales.manager.username");
         String actualProfileName = homePage.userProfile.getText();
         Assert.assertEquals(expectedProfileName, actualProfileName);
-
 
     }
 
 
     @Then("The store manager sees their own username in the profile menu")
-    public void the_store_manager_sees_their_own_username_in_the_profile_menu() {
+    public void the_store_manager_sees_their_own_username_in_the_profile_menu() throws InterruptedException {
+        Thread.sleep(3000);
         String expectedProfileName = ConfigurationReader.getProperty("store.manager.username");
         String actualProfileName = homePage.userProfile.getText();
         Assert.assertEquals(expectedProfileName, actualProfileName);
